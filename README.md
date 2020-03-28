@@ -3,6 +3,7 @@ A Metadata API built using Python 3 and FastAPI
 
 ## Quick Start
 
+
 To get this project up and running locally on your computer:
 1. Set up a [Python development environment](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment). This project uses pipenv
 
@@ -27,21 +28,7 @@ To get this project up and running locally on your computer:
    # Go to http://localhost/
    ```
 
-## API Overview
-   ```
-   GET: Get information about and existing key
-       <url>/<collection_name>/key/<key_id>
-           {
-               'created':<utc-datetime>
-               'last_updated':<utc-datetime>
-               'payload':{
-                   <your-data-payload>
-               }
-           }
-
-   PUT: Create a new or replace existing metadata for key
-       <url>/<collection_name>/key/<key_id>
-           {
-               <your-data-payload>
-           }
-   ```
+5. API docs can be found here http://127.0.0.1:8000/redoc basic features are CRUD actions like
+   - Create or update metadata given an existing key 
+   - Retrieve metadata payload given a specific key 
+   - Delete metadata given a specific key
