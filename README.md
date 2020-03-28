@@ -6,9 +6,9 @@ A Metadata API built using Python 3 and FastAPI
 To get this project up and running locally on your computer:
 1. Set up a [Python development environment](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/development_environment). This project uses pipenv
 
-0. Change `sample.env` to `.env` and add your S3 credentials
+2. Change `sample.env` to `.env` and add your S3 credentials
 
-1. Assuming you have Python setup, run the following commands:
+3. Assuming you have Python setup, run the following commands:
    ```
    pipenv install
    cd app
@@ -19,7 +19,7 @@ To get this project up and running locally on your computer:
    pytest
    ```
 
-2. Build and run the via docker
+4. Build and run the via docker
 ```
 docker build -t bishop_image .
 docker run --name bishop_container -p 80:80 bishop_image
