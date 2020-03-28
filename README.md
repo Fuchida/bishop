@@ -20,28 +20,28 @@ To get this project up and running locally on your computer:
    ```
 
 4. Build and run the via docker
-```
-docker build -t bishop_image .
-docker run --name bishop_container -p 80:80 bishop_image
+   ```
+   docker build -t bishop_image .
+   docker run --name bishop_container -p 80:80 bishop_image
 
-# Go to http://localhost/
-```
+   # Go to http://localhost/
+   ```
 
 ## API Overview
-```
-GET: Get information about and existing key
-    <url>/<collection_name>/key/<key_id>
-        {
-            'created':<utc-datetime>
-            'last_updated':<utc-datetime>
-            'payload':{
-                <your-data-payload>
-            }
-        }
+   ```
+   GET: Get information about and existing key
+       <url>/<collection_name>/key/<key_id>
+           {
+               'created':<utc-datetime>
+               'last_updated':<utc-datetime>
+               'payload':{
+                   <your-data-payload>
+               }
+           }
 
-PUT: Create a new or replace existing metadata for key
-    <url>/<collection_name>/key/<key_id>
-        {
-            <your-data-payload>
-        }
-```
+   PUT: Create a new or replace existing metadata for key
+       <url>/<collection_name>/key/<key_id>
+           {
+               <your-data-payload>
+           }
+   ```
