@@ -48,4 +48,5 @@ def delete_key(collection_name: str, key: str):
     """
         Create a new or replace existing metadata for key
     """
-    return {"status":f"Not Implemented for {collection_name} and {key}"}
+    data = {}
+    return JSONResponse(status_code=status.HTTP_501_NOT_IMPLEMENTED, content=data)
