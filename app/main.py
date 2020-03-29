@@ -1,7 +1,6 @@
 """
 Main entry postr of the application consisting of default routes
 """
-from datetime import datetime
 
 from fastapi import FastAPI
 
