@@ -4,7 +4,9 @@ Main entry postr of the application consisting of default routes
 from datetime import datetime
 
 from fastapi import FastAPI
+
 from service import MetaStore
+
 
 app = FastAPI()
 
@@ -28,7 +30,7 @@ def get_key(collection_name: str, key: str):
 
 
 @app.put("/collection/{collection_name}/key/{key}")
-def put_key(collection_name: str, key: str):
+def put_key(collection_name: str, key: str, payload: dict):
     """
         Create a new or replace existing metadata for key
 
@@ -37,13 +39,7 @@ def put_key(collection_name: str, key: str):
             it's used to prevent namespace collisions.
     """
     store = MetaStore()
-    data = {'created': datetime.utcnow(),
-            'created_by':'Bishop',
-            'payload':{'collection':collection_name,
-                       'key':key}
-            }
-
-    return store.put(collection_name, key, data=data)
+    return store.put(collection_name, key, data=payload)
 
 
 @app.delete("/collection/{collection_name}/key/{key}")
