@@ -1,5 +1,5 @@
 """
-    Provide interface between external services
+    Provide an interface between external services
 """
 import json
 
