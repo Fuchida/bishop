@@ -2,7 +2,8 @@
 Main entry postr of the application consisting of default routes
 """
 
-from fastapi import FastAPI
+from fastapi import FastAPI, status
+from fastapi.responses import JSONResponse
 
 from service import MetaStore
 
@@ -23,9 +24,14 @@ def get_key(collection_name: str, key: str):
         Get information about an existing key
     """
     store = MetaStore()
+    data = store.get(collection_name, key)
 
-    # TODO if metadata is not found, return status should be 404
-    return store.get(collection_name, key)
+    if data:
+        response = JSONResponse(status_code=status.HTTP_200_OK, content=data)
+    else:
+        response = JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=data)
+
+    return response
 
 
 @app.put("/collection/{collection_name}/key/{key}")
