@@ -25,13 +25,9 @@ def get_key(collection_name: str, key: str):
     """
     store = MetaStore()
     data = store.get(collection_name, key)
+    status_code = status.HTTP_200_OK if data else status.HTTP_404_NOT_FOUND
 
-    if data:
-        response = JSONResponse(status_code=status.HTTP_200_OK, content=data)
-    else:
-        response = JSONResponse(status_code=status.HTTP_404_NOT_FOUND, content=data)
-
-    return response
+    return JSONResponse(status_code=status_code, content=data)
 
 
 @app.put("/collection/{collection_name}/key/{key}")
