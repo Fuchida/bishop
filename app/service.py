@@ -4,6 +4,8 @@
 import json
 
 import bucketstore
+from botocore.exceptions import EndpointConnectionError
+import backoff
 from settings import EnvironmentSettings
 
 class MetaStore:
@@ -15,6 +17,8 @@ class MetaStore:
         self.env = EnvironmentSettings()
         self.store = bucketstore.get(self.env.s3_bucket_name, create=True)
 
+    @backoff.on_exception(backoff.expo, EndpointConnectionError, max_time=3600,
+                          jitter=backoff.full_jitter)
     def get(self, collection: str, key: str) -> dict:
         """
             Retrive data based on existing key.
@@ -26,6 +30,8 @@ class MetaStore:
 
         return data
 
+    @backoff.on_exception(backoff.expo, EndpointConnectionError, max_time=3600,
+                          jitter=backoff.full_jitter)
     def put(self, collection: str, key: str, data: dict) -> dict:
         """
             Provided a key and value store data in the datastore
