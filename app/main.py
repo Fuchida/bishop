@@ -46,7 +46,7 @@ def put_key(collection_name: str, key: str):
     return store.put(collection_name, key, data=data)
 
 
-@app.put("/collection/{collection_name}/key/{key}")
+@app.delete("/collection/{collection_name}/key/{key}")
 def delete_key(collection_name: str, key: str):
     """
         Create a new or replace existing metadata for key
