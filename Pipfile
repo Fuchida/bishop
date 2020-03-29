@@ -12,6 +12,7 @@ pytest = "~=5.3.5"
 bucketstore = "~=0.2.1"
 fastapi = "*"
 uvicorn = "*"
+envparse = "*"
 
 [requires]
 python_version = "3.7"
