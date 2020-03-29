@@ -18,9 +18,6 @@ class MetaStore:
     def get(self, collection: str, key: str) -> dict:
         """
             Retrive data based on existing key.
-
-            Raises:
-                NoSuchKey when key does not exists
         """
         if self.key_exists(collection, key):
             data = json.loads(self.store.get(f'{collection}/{key}'))
