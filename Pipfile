@@ -13,6 +13,7 @@ bucketstore = "~=0.2.1"
 fastapi = "*"
 uvicorn = "*"
 envparse = "*"
+backoff = "*"
 
 [requires]
 python_version = "3.7"
