@@ -30,6 +30,10 @@ def get_key(collection_name: str, key_id: int):
 def put_key(collection_name: str, key_id: int):
     """
         Create a new or replace existing metadata for key
+
+        Note:
+            A collection is implicitly part of the key because
+            it's used to prevent namespace collisions.
     """
     return {"status":f"Not Implemented for {collection_name} and {key_id}"}
 
