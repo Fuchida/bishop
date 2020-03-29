@@ -19,7 +19,7 @@ class MetaStore:
         self.store = self.__get_store_instance()
 
     @backoff.on_exception(backoff.expo, EndpointConnectionError,
-                          max_time=3600, jitter=backoff.full_jitter)
+                          max_time=15, jitter=backoff.full_jitter)
     def __get_store_instance(self) -> S3Bucket:
         """
             Connect to S3 and provide an instance of S3Bucket
@@ -27,7 +27,7 @@ class MetaStore:
         return bucketstore.get(self.env.s3_bucket_name, create=True)
 
     @backoff.on_exception(backoff.expo, EndpointConnectionError,
-                          max_time=3600, jitter=backoff.full_jitter)
+                          max_time=15, jitter=backoff.full_jitter)
     def get(self, collection: str, key: str) -> dict:
         """
             Retrive data based on existing key.
@@ -40,7 +40,7 @@ class MetaStore:
         return data
 
     @backoff.on_exception(backoff.expo, EndpointConnectionError,
-                          max_time=3600, jitter=backoff.full_jitter)
+                          max_time=15, jitter=backoff.full_jitter)
     def put(self, collection: str, key: str, data: dict) -> dict:
         """
             Provided a key and value store data in the datastore

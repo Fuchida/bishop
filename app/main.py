@@ -7,7 +7,6 @@ from fastapi.responses import JSONResponse
 
 from service import MetaStore
 
-
 app = FastAPI()
 
 @app.get("/")
