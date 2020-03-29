@@ -1,9 +1,10 @@
 """
 Main entry postr of the application consisting of default routes
 """
+from datetime import datetime
 
-from service import MetaStore
 from fastapi import FastAPI
+from service import MetaStore
 
 app = FastAPI()
 
@@ -20,6 +21,9 @@ def get_key(collection_name: str, key: str):
     """
         Get information about an existing key
     """
+    store = MetaStore()
+
+    # TODO if metadata is not found, return status should be 404
     return store.get(collection_name, key)
 
 
@@ -32,7 +36,14 @@ def put_key(collection_name: str, key: str):
             A collection is implicitly part of the key because
             it's used to prevent namespace collisions.
     """
-    return {"status":f"Not Implemented for {collection_name} and {key}"}
+    store = MetaStore()
+    data = {'created': datetime.utcnow(),
+            'created_by':'Bishop',
+            'payload':{'collection':collection_name,
+                       'key':key}
+            }
+
+    return store.put(collection_name, key, data=data)
 
 
 @app.put("/collection/{collection_name}/key/{key}")
