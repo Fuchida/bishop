@@ -22,7 +22,7 @@ To get this project up and running locally on your computer:
 
 2. Change `sample.env` to `.env` and add your S3 credentials
 
-3. Assuming you have Python setup, run the following commands:
+3. Assuming you have everything setup run the following commands:
    ```
    pipenv shell
    pipenv install
@@ -34,9 +34,10 @@ To get this project up and running locally on your computer:
    pytest
    ```
 
-4. Build and run the via docker.
-   Note: Be sure to set environment variables in dockerfile
+4. Build and run the via docke
    ```
+   # set environment variables in dockerfile before running commands below
+   
    docker build -t bishop_image .
    docker run --name bishop_container -p 80:80 bishop_image
 
@@ -54,6 +55,6 @@ A couple examples of the available endpoints.
 Get metadata given a collection and key name
 [ GET ] /collection/{collection_name}/key/{key}
 
-Provided a JSON metadata payload, create a collction and key for payload
+Provided a JSON metadata payload, create a collection and key for payload
 [ PUT ] /collection/{collection_name}/key/{key}
 ```
