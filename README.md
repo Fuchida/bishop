@@ -32,7 +32,8 @@ To get this project up and running locally on your computer:
    pytest
    ```
 
-4. Build and run the via docker
+4. Build and run the via docker.
+   Note: Be sure to set environment variables in dockerfile
    ```
    docker build -t bishop_image .
    docker run --name bishop_container -p 80:80 bishop_image
