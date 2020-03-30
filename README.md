@@ -45,3 +45,13 @@ To get this project up and running locally on your computer:
    - Create or update metadata given an existing key
    - Retrieve metadata payload given a specific key
    - Delete metadata given a specific key
+
+## API Examples
+A couple examples of the available endpoints.
+```
+Get metadata given a collection and key name
+[ GET ] /collection/{collection_name}/key/{key}
+
+Provided a JSON metadata payload, create a collction and key for payload
+[ PUT ] /collection/{collection_name}/key/{key}
+```
