@@ -1,7 +1,7 @@
 # Bishop
 A Metadata API built using Python 3, FastAPI and backed by S3
 
-# Why
+## Why
 Bishop is a fit for situations where you want to store quick bits of facts without
 setting up an entire database for it. 
 
