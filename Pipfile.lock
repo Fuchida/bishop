@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "69bc190c530d95386a5bd46ccb15b75d4396f875e7a183c089b1f131fa7904b1"
+            "sha256": "f610a2cc0804fb33c5dcb252d5dced2e1d0cda8fa9888b38834d9f73da9a4d39"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -26,17 +26,17 @@
         },
         "boto3": {
             "hashes": [
-                "sha256:8bf7e3611d46e8214bf225169ac55de762d9d341514f81ebae885dd601138fcf",
-                "sha256:913fc7bbb9df147ed6fa0bd2b391469652ee8cad3e26ca2355e6ff774d9516fb"
+                "sha256:5246caf509baa4716065e6bb78bdc516fdd6b0dfbd9098cc2a0f779fad789c6c",
+                "sha256:52b8de35f6647e3b8ce81f6a745a67812623b5c4acc2d6bd5e814fddfa488321"
             ],
-            "version": "==1.12.31"
+            "version": "==1.12.34"
         },
         "botocore": {
             "hashes": [
-                "sha256:3d4684f61ff07aa1b4cd30d13a6b8e6416142be5a2a55aedcc1d7974b9415bb1",
-                "sha256:86e3f25c9a94e9e85915ef3dcb13b496d25873a40b81f4e23a7a0250248d1be9"
+                "sha256:c799623598d04c66b0be4cb990c01a24bd3c06023f0c7221adead38a7431c994",
+                "sha256:db0fba3f4adfb9bf3976aae10efa9acb59e3efe52ce8feac71ecac0b7be2fc2e"
             ],
-            "version": "==1.15.31"
+            "version": "==1.15.34"
         },
         "bucketstore": {
             "hashes": [
@@ -69,11 +69,11 @@
         },
         "fastapi": {
             "hashes": [
-                "sha256:c2d572370153a6b74d62a73252d75934e2bfdbb0f620fecfd489b5d4789f5c48",
-                "sha256:c478bc513d192f6776fd3f0355b7ff5414e94ed842677294c06e348105aaa237"
+                "sha256:a5cb9100d5f2b5dd82addbc2cdf8009258bce45b03ba21d3f5eecc88c7b5a716",
+                "sha256:cf26d47ede6bc6e179df951312f55fea7d4005dd53370245e216436ca4e22f22"
             ],
             "index": "pypi",
-            "version": "==0.53.1"
+            "version": "==0.53.2"
         },
         "h11": {
             "hashes": [
@@ -106,6 +106,14 @@
                 "sha256:cca55c8d153173e21baa59983015ad0daf603f9cb799904ff057bfb8ff8dc2d9"
             ],
             "version": "==0.9.5"
+        },
+        "logzero": {
+            "hashes": [
+                "sha256:34fa1e2e436dfa9f37e5ff8750e932bafe0c5abbb42e1f669e4cf5ce1f179142",
+                "sha256:818072e4fcb53a3f6fb4114a92f920e1135fe6f47bffd9dc2b6c4d10eedacf27"
+            ],
+            "index": "pypi",
+            "version": "==1.5.0"
         },
         "pydantic": {
             "hashes": [
