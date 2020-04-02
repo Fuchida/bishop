@@ -37,7 +37,7 @@ To get this project up and running locally on your computer:
 4. Build and run the via docke
    ```
    # set environment variables in dockerfile before running commands below
-   
+
    docker build -t bishop_image .
    docker run --name bishop_container -p 80:80 bishop_image
 
@@ -47,7 +47,7 @@ To get this project up and running locally on your computer:
 5. API docs can be found here http://localhost/redoc, currently only basic features are available.
    - Create or update metadata given an existing key
    - Retrieve metadata payload given a specific key
-   - Delete metadata given a specific key [ TODO ]
+   - Delete metadata given a specific key
 
 ## API Examples
 A couple examples of the available endpoints.
