@@ -47,5 +47,8 @@ def delete_key(collection_name: str, key: str):
     """
         Create a new or replace existing metadata for key
     """
-    data = {}
-    return JSONResponse(status_code=status.HTTP_501_NOT_IMPLEMENTED, content=data)
+    store = MetaStore()
+    data = store.delete(collection_name, key)
+
+    status_code = status.HTTP_200_OK if data else status.HTTP_404_NOT_FOUND
+    return JSONResponse(status_code=status_code, content=data)
